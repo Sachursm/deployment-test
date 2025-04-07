@@ -9,10 +9,11 @@ from nltk.tokenize import word_tokenize
 
 app = Flask(__name__)
 # Download stopwords if not already downloaded
-try:
-    nltk.data.find('corpora/stopwords')
-except LookupError:
-    nltk.download('stopwords')
+
+# Download necessary NLTK resources
+nltk.download('stopwords')
+nltk.download('punkt')
+nltk.download('punkt_tab')
 
 # Load the model and tokenizer
 model = load_model('lstm_text_model.h5')
