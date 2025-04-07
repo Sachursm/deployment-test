@@ -8,6 +8,11 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 
 app = Flask(__name__)
+# Download stopwords if not already downloaded
+try:
+    nltk.data.find('corpora/stopwords')
+except LookupError:
+    nltk.download('stopwords')
 
 # Load the model and tokenizer
 model = load_model('lstm_text_model.h5')
