@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Email Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        <div class="content-container">
+            <div class="hero">
+                <h1>Detect Spam & Phishing Emails Instantly!</h1>
+            </div>
+            <form method="POST" action="/analysis">
+                <textarea class="email-message" name="message" placeholder="Enter email message" required></textarea>
+                <input class="email-id" type="text" name="email_id" placeholder="Enter email ID" required>
+                <button type="submit">Check Now</button>
+            </form>
+            <div class="features">
+                <div class="feature-item">🛡️ Spam Detection</div>
+                <div class="feature-item">🚨 Phishing Warning</div>
+                <div class="feature-item">✅ Safe Email Validation</div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <a href="#" class="btn">Privacy Policy</a>
+        <a href="#" class="btn">Terms of Use</a>
+        <a href="#" class="btn">Contact</a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis - Email Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        <div class="content-container">
+            <h1>Email Analysis Results</h1>
+            <div class="{{ result }}">
+                <h2>{{ result | upper }}</h2>
+                <div class="progress-bar">
+                    <div class="progress" style="width: {{ confidence }}%;"></div>
+                </div>
+                <p>Confidence: {{ "%.2f"|format(confidence) }}%</p>
+            </div>
+            <div>
+                {% if result == 'spam' or result == 'phishing' %}
+                    <a href="/report" class="btn">Report {{ result | capitalize }}</a>
+                {% else %}
+                    <p>Tip: Always verify email links before clicking.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <footer>
+        <a href="/" class="btn">Home</a>
+    </footer>
+</body>
+</html>

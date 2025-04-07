@@ -1,0 +1,224 @@
+/* General Styles */
+body {
+    background: linear-gradient(135deg, #1a1a1a, #333);
+    color: #e0e0e0;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+a {
+    color: #80b3ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Main Container */
+.main-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Content Container - Wider and Taller */
+.content-container {
+    background-color: #2a2a2a;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    max-width: 900px;
+    min-height: 500px; /* Taller container */
+    width: 100%;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Hero Section */
+.hero {
+    margin-bottom: 20px;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 10px;
+}
+
+/* Result Styles */
+.ham {
+    background-color: #2a3d2a;
+    color: #80ff80;
+    border: 2px solid #80ff80;
+    padding: 20px;
+    border-radius: 8px;
+    animation: flip 0.5s ease-in-out;
+}
+
+.spam {
+    background-color: #3d2a2a;
+    color: #ff8080;
+    border: 2px solid #ff8080;
+    padding: 20px;
+    border-radius: 8px;
+    animation: flip 0.5s ease-in-out;
+}
+
+.phishing {
+    background-color: #4d3d1a;
+    color: #ffcc80;
+    border: 2px solid #ffcc80;
+    padding: 20px;
+    border-radius: 8px;
+    animation: flip 0.5s ease-in-out;
+}
+
+/* Progress Bar */
+.progress-bar {
+    width: 100%;
+    max-width: 400px;
+    height: 10px;
+    background-color: #444;
+    border-radius: 5px;
+    margin: 10px auto;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background-color: #80b3ff;
+    transition: width 1s ease-in-out;
+}
+
+/* Input and Button Styling */
+textarea.email-message {
+    width: 100%;
+    max-width: 700px;
+    height: 150px;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #333;
+    color: #e0e0e0;
+    border: 1px solid #555;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: border-color 0.3s ease;
+    resize: vertical;
+}
+
+input.email-id {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #333;
+    color: #e0e0e0;
+    border: 1px solid #555;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #80b3ff;
+    outline: none;
+}
+
+button, .btn {
+    background-color: #4a4a4a;
+    color: #e0e0e0;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 15px;
+    display: inline-block; /* Ensure button-like behavior for <a> tags */
+    text-decoration: none; /* Remove underline for <a> tags styled as buttons */
+}
+
+button:hover, .btn:hover {
+    background-color: #666;
+    transform: scale(1.05);
+}
+
+/* Other Inputs (for report page) */
+input, textarea:not(.email-message), select {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #333;
+    color: #e0e0e0;
+    border: 1px solid #555;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: border-color 0.3s ease;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    padding: 10px;
+    text-align: center;
+    margin-top: auto;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes flip {
+    from { transform: perspective(400px) rotateY(90deg); opacity: 0; }
+    to { transform: perspective(400px) rotateY(0deg); opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content-container {
+        max-width: 90%;
+        min-height: 450px;
+    }
+    .features {
+        flex-direction: column;
+    }
+    button, .btn {
+        width: 100%;
+        max-width: 200px;
+    }
+    textarea.email-message {
+        max-width: 100%;
+    }
+    input.email-id {
+        max-width: 100%;
+    }
+}
